@@ -1,0 +1,21 @@
+Jak jsme to dělali my - prezentace
+
+1) Systém návrhu nešel úplně ideálním způsobem, nedělejte to stejně! Podstatná jsou data, tedy co a jak zpravovávat systémem. Nikoliv jak vizuálně bude vypadat formulář do kterého budou zadávány informace!
+2) Plakáty - detekce zda je plakát na výšku nebo na šířku aby to nebylo nutné zavádat...
+3) Log přímo v systému - zase tolik místa to nezabere, pořád je to jen text v DB!
+4) Číselníky - tam se nesmí mazat! Ale je možné zastaralé informace s vazbou na historické záznamy skrýt
+5) Výsupy - PDF je až poslední možnost ... no dá se koupit PDF Acrobat Pro ale vyplatí se to?
+
+
+Možné okruhy trápení :
+
+1) Realizace - Víte co chcete? Opravdu to víte? Pokud to nevíte, tak jen myslíže, že to víte. Promýšlejte detaily!
+    - akce vs. výstava !!!
+    - je lépe plánovat i to co v základu nepotřebujete ale když s tím počítá návrh je to mnohem jednodušší!
+    
+2) Prosazení - A kdo to chce? Nechce to jen vedení? Nebude běžný zaměstnanec systém vnímat jako práci navíc?
+    - ideální je rovnou při návrhu přemýšlet "komu tím prospějete?!" resp. vymyslet co systém bude dělat ale následně nechat koncové zaměstnance se zapojit tak aby měli dojem, že sami vymysleli co systém bude (za ně) dělat
+    
+3) Aktualizace - Čas plyne jen v před. Budou nové veze jazyka na kterém to bude realizované a je třeba pčítat s tím, že systém bude třeba inovovat!
+    - entropy 2014 (8 let) na verzi frameworku CodeIgniter 3.. a PHP 5..  ale aktuální verze frameworku je 4 a PHP 8
+    - neaktualizovat znamená zvyšující se ryziko průniku skrze chybu (která ani nemusí být v stystému ale v něčem nadřazeném) do systému   
