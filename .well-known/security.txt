@@ -1,0 +1,4 @@
+Contact: mailto:petr.jandl@gmail.com
+Expires: 2080-03-29T22:45:00.000Z
+Preferred-Languages: cs
+Canonical: https://petrjandl.cz/.well-known/security.txt

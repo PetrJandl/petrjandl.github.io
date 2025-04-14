@@ -1,0 +1,543 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-image: url("../images/space.webp");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* Levý panel */
+aside {
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 20px;
+    float: right;
+    border: 1px solid gray;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Pravá část */
+main {
+    margin-left: 250px;
+    padding: 40px;
+    width: calc(100% - 250px);
+    scroll-behavior: smooth;
+    background-color: #f9f9f9;
+}
+
+section {
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+/* Responzivní verze pro mobil */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        right: -20px;
+        top: -20px;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Skryté, dokud není potřeba */
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-top:hover, .menu-toggle:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.project {
+    display: flex;
+    align-items: flex-start; /* Text zarovnáme nahoru */
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Obrázek vlevo, text vpravo (výchozí) */
+.project img {
+    width: 40%;
+    max-width: 300px;
+}
+
+.project-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Text bude nahoře */
+}
+
+/* ✅ Projekty s třídou .reverse budou mít obrázek vpravo a text vlevo */
+.project.reverse {
+    flex-direction: row-reverse !important;
+}
+
+/* 🟢 Přidání paddingu k <hr>, který bude vždy za obrázkem */
+hr {
+    margin-top: 20px; /* Mezera nad hr */
+    margin-bottom: 20px; /* Mezera pod hr */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #ccc; /* Nastavení barvy a tloušťky čáry hr */
+}
+
+/* 🟢 MOBILNÍ VERZE: Všechny projekty obrázek nahoře */
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .project img {
+        width: 100%;
+        max-width: none;
+    }
+
+    .project.reverse {
+        flex-direction: column !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Mezera mezi ikonami */
+    flex-wrap: wrap;
+}
+
+/* Každý odkaz je klikací blok */
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    width: 100px;
+    text-align: center;
+}
+
+/* Hover efekt */
+.social-item:hover {
+    background: #ddd;
+}
+
+/* Ikony */
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Popis pod ikonou */
+.social-item span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Facebook */
+.social-item.facebook .social-icon {
+    background-color: #1877f2;
+}
+
+/* LinkedIn */
+.social-item.linkedin .social-icon {
+    background-color: #0077b5;
+}
+
+/* Gmail */
+.social-item.gmail .social-icon {
+    background-color: #D14836;
+}
+
+/* Telefon */
+.social-item.phone .social-icon {
+    background-color: #34a853; /* Zelená (Google Phone barva) */
+}
+
+/* Mobilní verze - zobrazí ikonky pod sebou */
+@media (max-width: 600px) {
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+
+
+
+/* Stylování menu tlačítek */
+.menu a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    background: transparent;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    width: 230px;
+}
+
+/* Efekt "rozsvícení" při najetí myší */
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Zvýraznění aktivního tlačítka (např. ručně nastavená třída) */
+.menu a.active {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Odkazy v textu – standardně modré a podtržené */
+a {
+    color: blue;
+}
+
+/* Příklad pro případ, že bys chtěl, aby se odkazy v rámci jiných elementů nepřebíjely */
+.content a { 
+    color: blue;
+}
+
+
+
+#about {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.bio-entry {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.bio-entry:last-child {
+    margin-bottom: 0;
+}
+
+.bio-date {
+    width: 180px;
+    font-weight: bold;
+    padding-right: 20px;
+    color: #666;
+}
+
+.bio-description {
+    flex: 1;
+}
+
+.bio-description h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.bio-description p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.bio-date .year {
+    display: block;
+    font-size: 18px;
+    color: #000;
+}
+
+.bio-date .location {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responzivní design pro menší obrazovky */
+@media (max-width: 768px) {
+    .bio-entry {
+        flex-direction: column;
+    }
+
+    .bio-date {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .bio-description h2 {
+        font-size: 18px;
+    }
+
+    .bio-description p {
+        font-size: 14px;
+    }
+}
+
+/* Základní styl pro aside */
+aside {
+    width: 250px; /* Šířka menu */
+    height: 100%;
+    background: #333;
+    color: white;
+    padding: 20px;
+    transform: translateX(-100%); /* Skryje menu vlevo */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Aktivní stav - menu se zobrazí */
+aside.active {
+    transform: translateX(0);
+}
+
+/* Hamburger tlačítko */
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    background: #444;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1001;
+}
+
+/* Odkazy v menu */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.nav-links li {
+    margin-bottom: 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Světlejší pozadí při hoveru */
+    transition: background 0.3s ease-in-out;
+}
+ul.nav-links a {
+    display: inline-block;
+    width: 230px;
+    padding: 20px;
+}
+
+
+/* Schované menu na mobilu */
+@media (max-width: 768px) {
+    aside {
+        transform: translateX(-100%);
+    }
+
+    aside.active {
+        transform: translateX(0);
+    }
+
+    h1 {
+        clear: both;
+        width: 100%;
+        text-align: right;
+    }
+
+    ul.nav-links a {
+        padding: 5px;
+    }
+
+}
+
+@media (min-width: 769px) {
+    aside {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        visibility: hidden;
+    }
+
+}
+
+@media (min-width: 2200px) {
+    .background-image-left {
+        left: 0;
+        background: url("../images/2015mikulas.webp") no-repeat left center;
+    }
+    .background-image-right {
+        right: 0;
+        background: url("../images/2015morava2.webp") no-repeat left center;
+    }
+   .background-image-left,.background-image-right {
+        position: fixed;
+        top: 0;
+        width: 25%;
+        height: 100vh;
+        background-size: cover;
+        z-index: -1;
+    }
+}
+
+
+
+
+
+.menu-toggle,
+.scroll-top {
+    border-radius: 5px; /* Stejné zaoblení jako u menu */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 0;
+}
+
+
+.content {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+ul li {
+    margin-left: 20px;
+    
+}
+
+@media (max-height: 500px){
+    ul.nav-links a {
+        padding: 10px;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+}
+
+h2 {
+    margin: 44px 0;
+}
