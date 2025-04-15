@@ -29,12 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
             var targetId = this.getAttribute("href").substring(1);
             var targetSection = document.getElementById(targetId);
 
+            asideMenu.classList.remove("active");
+            menuToggle.innerHTML = "☰"; // Vrátí hamburger ikonku
+
             if (targetSection) {
                 targetSection.scrollIntoView({ 
                     behavior: "smooth", 
                     block: "start" 
                 });
             }
+
         });
     }
 
