@@ -11,7 +11,7 @@ body {
     display: flex;
     font-family: Arial, sans-serif;
     color: #333;
-    background-image: url("../images/space.webp");
+    background-color: #666;
     background-attachment: fixed;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -47,9 +47,9 @@ aside {
     margin: 20px;
     float: right;
     border: 1px solid gray;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
 }
 
 nav ul {
