@@ -494,11 +494,11 @@ ul.nav-links a {
 @media (min-width: 2200px) {
     .background-image-left {
         left: 0;
-        background: url("../images/2015mikulas.webp") no-repeat left center;
+        background: url("../images/right.webp") no-repeat left center;
     }
     .background-image-right {
         right: 0;
-        background: url("../images/2015morava2.webp") no-repeat left center;
+        background: url("../images/left.webp") no-repeat left center;
     }
    .background-image-left,.background-image-right {
         position: fixed;
