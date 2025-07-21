@@ -22,8 +22,7 @@ img {
 body {
     display: flex;
     font-family: Arial, sans-serif;
-    color: #0F0F0F;
-    background-color: #666;
+    background-color: #0F0F0F;
     background-attachment: fixed;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
