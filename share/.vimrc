@@ -10,7 +10,7 @@ endif
 "F2 - ulozit
 map <F2> :wq<cr>
 
-"F9 prepnouz zobrazeni sloupce s cisly radku
+"F9 prepina ne/zobrazeni sloupce s cisly radku
 map <F9> :set number!<cr>:set relativenumber!<cr>
 
 "F10 zavrit bez uložení
