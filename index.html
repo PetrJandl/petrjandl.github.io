@@ -19,7 +19,7 @@
 <body>
         <div class="background-image-left"></div>
         <div class="content">
-        <button id="menu-toggle" class="menu-toggle">☰</button>
+        <button id="menu-toggle" class="menu-toggle" aria-controls="aside-menu" aria-expanded="false" aria-label="Otevřít menu">☰</button>
         <aside id="aside-menu">
             <h1>PetrJandl.cz</h1>
             <nav>
@@ -32,10 +32,31 @@
         </aside>
     
         <main>
-            
             <section id="about">
-                <img src="https://www.petrjandl.cz/assets/img/pj.webp" alt="Moje fotka" class="profile-pic">
-                <h2>O mně</h2>
+                <div class="intro">
+                    <img src="https://www.petrjandl.cz/assets/img/pj.webp" alt="Petr Jandl" class="profile-pic" width="120" height="120" loading="eager" decoding="async">
+                    <div class="intro-copy">
+                        <p class="eyebrow">Systémy, infrastruktura, weby</p>
+                        <h2>O mně</h2>
+                        <p>Spravuji servery, automatizuji rutinu a stavím interní nástroje, které šetří čas lidem v provozu. Tohle je výběr práce, která měla konkrétní dopad.</p>
+                    </div>
+                </div>
+
+                <div class="quick-facts" aria-label="Shrnutí zkušeností">
+                    <div class="quick-fact">
+                        <span class="quick-fact-value">20+ let</span>
+                        <span class="quick-fact-label">správa sítí a systémů</span>
+                    </div>
+                    <div class="quick-fact">
+                        <span class="quick-fact-value">Web + backend</span>
+                        <span class="quick-fact-label">interní nástroje a portály</span>
+                    </div>
+                    <div class="quick-fact">
+                        <span class="quick-fact-value">Automatizace</span>
+                        <span class="quick-fact-label">provoz, deployment, whitelisty</span>
+                    </div>
+                </div>
+
                 <div class="bio-entry">
                     <div class="bio-date">
                         <span class="year">2023 - současnost</span>
@@ -43,7 +64,7 @@
                     </div>
                     <div class="bio-description">
                         <h3>System Administrator</h3>
-                        <p>V současnosti pracuji jako systémový administrátor a v týmu udržujeme linuxové servery fyzické, virtuální i kontejnery a MacOS stanice atd.</p>
+                        <p>V současnosti pracuji jako systémový administrátor. V týmu udržujeme linuxové servery, fyzickou i virtuální infrastrukturu, kontejnery a macOS stanice.</p>
                     </div>
                 </div>
             
@@ -54,14 +75,14 @@
                     </div>
                     <div class="bio-description">
                         <h3>Správce sítě</h3>
-                        <p>Spravoval jsem v teamu pobočkovou síť knihovny. Krom běžné údržby proběhlo například:</p>
+                        <p>Spravoval jsem v týmu pobočkovou síť knihovny. Kromě běžné údržby proběhlo například:</p>
                         <ul>
-                            <li>Nahrazení analogové telefonní ústředny (s VoIP odchozími hovory), novou telefonní ústřednou plně VoIP. Je to Asterisk dodaný nějakou čínskou firmou s HW a web GUI. Na server jsem si pak hodil ještě malý script pro <a href="https://github.com/PetrJandl/searchNameByPhoneOnGigaset">zobranení jména volajícího na bezdrátových telefonech Gigaset</a>.</li>
-                            <li><a href="https://youtu.be/5LekAVnIndw">Windows 10 - deploy přes síť</a>. Stačilo připojit PC k síti (nastavit pro danou mac adresu IP adresu v DHCP) a za 30 min. měl PC instalovaný OS včetně potřebných programů. </li>
-                            <li>Entropy - systém pro plánování využití zdrojů (sálů, projektorů atd.). Velké prostory mnoho místností a mnoho akcí, více v projektech.<a href="https://petrjandl.cz/assets/img/portfolio/entropy.html">Prezentace funkcí systému entropy</a>.</li>
+                            <li>Nahrazení analogové telefonní ústředny plně VoIP řešením s Asteriskem a doplnění scriptu pro <a href="https://github.com/PetrJandl/searchNameByPhoneOnGigaset">zobrazení jména volajícího na telefonech Gigaset</a>.</li>
+                            <li><a href="https://youtu.be/5LekAVnIndw">Windows 10 deployment přes síť</a>. Stačilo připojit PC k síti a během zhruba 30 minut byl hotový systém včetně potřebných programů.</li>
+                            <li>Entropy - systém pro plánování využití zdrojů, více v projektech. <a href="assets/img/portfolio/entropy.html" target="_blank" rel="noopener noreferrer">Prezentace funkcí systému Entropy</a>.</li>
                             <li>HKFree - navázání bližší  spolupráce umožnilo zlepšit kvalitu internetu (latence) na pobočkách po celém městě a zároveň snížit cenu připojení k internetu.</li>
                             <li>Proxmox - nasazení virtualizace, přes první pokusy s VMWare, se toto zdálo nejen levnější ale také praktičtější.</li>
-                            <li>MS ISA - zrušení MS firewallu s MS VPN, který byla napojena síť poboček, resp. bylo tam možné jim dělat suport. V první fázi nahrazení Linuxovými servery s Debianem jako "proof of concept" později staré PC nahrazeny bezúdržbovými routery Mikrotik. Na konec přidány vychytávky jako <a href="https://github.com/PetrJandl/addIPtoMikrotikFirewall">samoobslužný whitelist na mikrotiku</a>.</li>
+                            <li>MS ISA - nahrazení firewallu a VPN. Nejprve Debianem jako proof of concept, později bezúdržbovými routery Mikrotik a samoobslužným whitelistem pro firewall. <a href="https://github.com/PetrJandl/addIPtoMikrotikFirewall">Detaily řešení</a>.</li>
                             <li><a href="https://webknihovny.cz/">Webknihovny.cz</a> - systém napsaný v PHP4, jsem přepsal z čistého PHP na Framework CodeIgniter. Systém jsem spravoval od počátků v roce 2009 (ještě jako samostatné registrace na webzdarma.cz) až do roku 2022.</li>
                         </ul>
                     </div>
@@ -74,7 +95,7 @@
                    </div>
                    <div class="bio-description">
                        <h3>Správce informačního systému</h3>
-                       <p>Správa samozřejmě nezahrnovala nejen informační system ale také PC s Windows 2000. Vnitřní síť postrádala server, tedy jsem sestavil linuxový stroj a rozjel Sambu a spojil stoje v MS doménu aby mohli alespoň sdílet soubory.</p>
+                       <p>Správa nezahrnovala jen informační systém, ale také PC s Windows 2000. Vnitřní síť postrádala server, proto jsem sestavil linuxový stroj, rozjel Sambu a spojil stroje do MS domény, aby mohly alespoň sdílet soubory.</p>
                    </div>
                </div>
 
@@ -82,8 +103,8 @@
                    <div class="bio-date">
                         <span class="year">2001 - 2004</span>
                         <span class="location">Česká Lípa</span>
-                    </div>
-                    <div class="bio-description">
+                   </div>
+                   <div class="bio-description">
                            <h3>Učitel výpočetní techniky</h3>
                            <p>Výuka teorie i praxe práce s počítačem. Kurzy práce s počítačem pro kolegy.</p>
                     </div>
@@ -96,7 +117,7 @@
                    </div>
                    <div class="bio-description">
                        <h3>Studium střední školy - obor Elektrotechnika</h3>
-                       <p>Trávil jsem celé dny ve škole až do pozdních večerních hodin a nejen, že jsem hrál hry, zároveň jsem pro tzv. Computer club vytvořil například <a href="https://youtu.be/0KCGmkZu6_s">menu</a>, kterým si mohl i méně zkušený user rozbalit hru ze sítě a instalovat na lokální PC. Aniž by vlastně věděl, jak se to dělá.</p>
+                       <p>Trávil jsem celé dny ve škole až do pozdních večerních hodin a pro Computer club jsem vytvořil například <a href="https://youtu.be/0KCGmkZu6_s">menu</a>, které umožnilo i méně zkušenému uživateli rozbalit hru ze sítě a nainstalovat ji na lokální PC.</p>
                    </div>
                </div>
 
@@ -110,8 +131,13 @@
                     <div class="project-text">
                         <h3>WebKnihovny.cz</h3>
                         <p>Šablona webu pro malé knihovny – redakční systém pro správu obsahu webu, který lze jednoduše registrovat a okamžitě používat.</p>
+                        <div class="project-meta">
+                            <span>CMS</span>
+                            <span>PHP</span>
+                            <span>správa obsahu</span>
+                        </div>
                     </div>
-                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/WebKnihovny.webp" alt="Screenshot WebKnihovny.cz" class="project-image">
+                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/WebKnihovny.webp" alt="Screenshot WebKnihovny.cz" class="project-image" loading="lazy" decoding="async">
                 </div>
             
                 <hr>
@@ -119,9 +145,17 @@
                 <div class="project">
                     <div class="project-text">
                         <h3>Entropy</h3>
-                        <p>Komplexní systém pro správu pořádaných akcí, prostor, mobiliáře a další techniky. <a href="assets/img/portfolio/entropy.html" target="_blank">Podrobná prezentace možností systému entropy</a>.</p>
+                        <p>Komplexní systém pro správu pořádaných akcí, prostor, mobiliáře a další techniky.</p>
+                        <div class="project-meta">
+                            <span>plánování</span>
+                            <span>rezervace</span>
+                            <span>interní systém</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="assets/img/portfolio/entropy.html" target="_blank" rel="noopener noreferrer">Podrobná prezentace</a>
+                        </div>
                     </div>
-                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/entropy.webp" alt="Screenshot Entropy" class="project-image">
+                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/entropy.webp" alt="Screenshot Entropy" class="project-image" loading="lazy" decoding="async">
                 </div>
             
                 <hr>
@@ -130,8 +164,13 @@
                     <div class="project-text">
                         <h3>EviS</h3>
                         <p>Evidenční systém platnosti smluv a revizí. S upozorňováním na obnovení před vypršením smlouvy / revize.</p>
+                        <div class="project-meta">
+                            <span>evidence</span>
+                            <span>upozornění</span>
+                            <span>kontrola lhůt</span>
+                        </div>
                     </div>
-                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/EviS.webp" alt="Screenshot EviS" class="project-image">
+                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/EviS.webp" alt="Screenshot EviS" class="project-image" loading="lazy" decoding="async">
                 </div>
     
                 <hr>
@@ -140,8 +179,13 @@
                     <div class="project-text">
                         <h3>O2 Výpisy</h3>
                         <p>Zpracování XML dat O2 a následné vygenerování PDF, jednotlivým zaměstnancům. Vyhodnocování výhodnosti tarifu, dle provolaných minut a CSV pro import do účetního systému.</p>
+                        <div class="project-meta">
+                            <span>XML</span>
+                            <span>PDF</span>
+                            <span>automatizace</span>
+                        </div>
                     </div>
-                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/O2vypisy.webp" alt="Screenshot O2 výpisy" class="project-image">
+                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/O2vypisy.webp" alt="Screenshot O2 Výpisy" class="project-image" loading="lazy" decoding="async">
                 </div>
     
                 <hr>
@@ -150,8 +194,13 @@
                     <div class="project-text">
                         <h3>Fakturační systém</h3>
                         <p>Úprava tehdy opensource fakturačního systému Fusion Invoice pro české prostředí. Import firmy dle IČ z ARES atd.</p>
+                        <div class="project-meta">
+                            <span>fakturace</span>
+                            <span>ARES</span>
+                            <span>lokalizace</span>
+                        </div>
                     </div>
-                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/FusionInvoice.webp" alt="Screenshot Fakturační systém" class="project-image">
+                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/FusionInvoice.webp" alt="Screenshot Fakturačního systému" class="project-image" loading="lazy" decoding="async">
                 </div>
 
                 <hr>
@@ -159,9 +208,17 @@
                 <div class="project">
                     <div class="project-text">
                         <h3>Fantasy a sci-fi písma</h3>
-                        <p>Mikroweb s vlastním html a css, bez využití frameworku. <a href="https://pisma.petrjandl.cz/">pisma.petrjandl.cz</a></p>
+                        <p>Mikroweb s vlastním HTML a CSS, bez využití frameworku.</p>
+                        <div class="project-meta">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>mikroweb</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://pisma.petrjandl.cz/" target="_blank" rel="noopener noreferrer">pisma.petrjandl.cz</a>
+                        </div>
                     </div>
-                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/FantasyPisma.webp" alt="Screenshot Písma" class="project-image">
+                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/FantasyPisma.webp" alt="Screenshot Písem" class="project-image" loading="lazy" decoding="async">
                 </div>
    
                 <hr>
@@ -169,9 +226,17 @@
                 <div class="project">
                     <div class="project-text">
                         <h3>Autopark</h3>
-                        <p>Demo frontendu pro dotykovou obrazovku, systém "beru si klíče od auta". <a href="https://autopark.petrjandl.cz/">autopark.petrjandl.cz</a></p>
+                        <p>Demo frontendu pro dotykovou obrazovku, systém „beru si klíče od auta“.</p>
+                        <div class="project-meta">
+                            <span>touch UI</span>
+                            <span>front-end</span>
+                            <span>interní provoz</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://autopark.petrjandl.cz/" target="_blank" rel="noopener noreferrer">autopark.petrjandl.cz</a>
+                        </div>
                     </div>
-                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/autopark.webp" alt="Screenshot Autopark" class="project-image">
+                    <img width="300" height="216" src="https://www.petrjandl.cz/assets/img/portfolio/autopark.webp" alt="Screenshot Autopark" class="project-image" loading="lazy" decoding="async">
                 </div>
 
                    
@@ -180,9 +245,17 @@
                 <div class="project">
                     <div class="project-text">
                         <h3>Mapa krajů</h3>
-                        <p>Demo frontendu pro interaktivnější mapu krajů <a href="https://mapakraju.petrjandl.cz/">mapakraju.petrjandl.cz</a></p>
+                        <p>Demo frontendu pro interaktivnější mapu krajů.</p>
+                        <div class="project-meta">
+                            <span>mapa</span>
+                            <span>interaktivita</span>
+                            <span>frontend</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://mapakraju.petrjandl.cz/" target="_blank" rel="noopener noreferrer">mapakraju.petrjandl.cz</a>
+                        </div>
                     </div>
-                    <img width="300" height="177" src="https://www.petrjandl.cz/assets/img/portfolio/mapakraju.webp" alt="Screenshot mapakraju" class="project-image">
+                    <img width="300" height="177" src="https://www.petrjandl.cz/assets/img/portfolio/mapakraju.webp" alt="Screenshot Mapy krajů" class="project-image" loading="lazy" decoding="async">
                 </div>
 
             </section>
@@ -192,17 +265,17 @@
             
             <section id="contact">
                 <h2>Kontakt</h2>
-                <p>Možnosti, jak tě lidé mohou kontaktovat...</p>
+                <p>Nejrychlejší je e-mail, případně LinkedIn.</p>
                 <div class="social-links">
                     <a href="mailto:petr.jandl@gmail.com" class="social-item gmail">
                         <div class="social-icon">G</div>
                         <span>Gmail</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/petrjandl/" target="_blank" class="social-item linkedin">
+                    <a href="https://www.linkedin.com/in/petrjandl/" target="_blank" rel="noopener noreferrer" class="social-item linkedin">
                         <div class="social-icon">in</div>
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://www.facebook.com/petr.jandl.7" target="_blank" class="social-item facebook">
+                    <a href="https://www.facebook.com/petr.jandl.7" target="_blank" rel="noopener noreferrer" class="social-item facebook">
                         <div class="social-icon">F</div>
                         <span>Facebook</span>
                     </a>
@@ -211,7 +284,7 @@
                 
             </section>
         </main>
-        <button id="scrollTop" class="scroll-top" style="display: none;">↑</button>
+        <button id="scrollTop" class="scroll-top" style="display: none;" aria-label="Zpět nahoru">↑</button>
         </div>
         <div class="background-image-right"></div> 
         <script src="js/script.js" nonce="r4nd0mStr1ng"></script>

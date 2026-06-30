@@ -5,6 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
     var menuToggle = document.getElementById("menu-toggle");
     var asideMenu = document.getElementById("aside-menu");
 
+    function setMenuState(isOpen) {
+        if (!asideMenu || !menuToggle) {
+            return;
+        }
+
+        asideMenu.classList.toggle("active", isOpen);
+        menuToggle.innerHTML = isOpen ? "✖" : "☰";
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute("aria-label", isOpen ? "Zavřít menu" : "Otevřít menu");
+    }
+
     // Zobrazí/skrývá tlačítko podle pozice na stránce
     if (scrollTopBtn) {
         window.addEventListener("scroll", function () {
@@ -29,8 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var targetId = this.getAttribute("href").substring(1);
             var targetSection = document.getElementById(targetId);
 
-            asideMenu.classList.remove("active");
-            menuToggle.innerHTML = "☰"; // Vrátí hamburger ikonku
+            setMenuState(false);
 
             if (targetSection) {
                 targetSection.scrollIntoView({ 
@@ -45,14 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle menu button s přepínáním ikonky
     if (menuToggle && asideMenu) {
         menuToggle.addEventListener("click", function () {
-            asideMenu.classList.toggle("active");
-
-            // Změní ikonku tlačítka podle stavu menu
-            if (asideMenu.classList.contains("active")) {
-                menuToggle.innerHTML = "✖"; // Křížek
-            } else {
-                menuToggle.innerHTML = "☰"; // Hamburger
-            }
+            setMenuState(!asideMenu.classList.contains("active"));
         });
     }
 
@@ -62,8 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
             !menuToggle.contains(event.target);
 
         if (clickOutsideMenu) {
-            asideMenu.classList.remove("active");
-            menuToggle.innerHTML = "☰"; // Vrátí hamburger ikonku
+            setMenuState(false);
         }
     });
 });

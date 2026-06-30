@@ -29,6 +29,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: #1b1f24;
 }
 
 /* Levý panel */
@@ -55,8 +56,11 @@ aside {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    margin: 20px;
-    float: right;
+    margin: 0;
+    float: none;
+    display: block;
+    align-self: start;
+    justify-self: center;
     border: 1px solid gray;
     -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
     -moz-box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
@@ -112,8 +116,8 @@ section {
         padding: 0;
         margin: 0;
         position: relative;
-        right: -20px;
-        top: -20px;
+        right: auto;
+        top: auto;
     }
 
     main {
@@ -554,4 +558,119 @@ ul li {
 
 h2 {
     margin: 44px 0;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.intro-copy {
+    max-width: 640px;
+}
+
+.eyebrow {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: #4f6478;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.intro-copy h2 {
+    margin: 0 0 12px;
+}
+
+.intro-copy > p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #28323b;
+}
+
+.quick-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 28px 0 16px;
+}
+
+.quick-fact {
+    background: #eef3f8;
+    border: 1px solid #d7e1eb;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.quick-fact-value {
+    display: block;
+    font-weight: 700;
+    color: #17324d;
+    margin-bottom: 4px;
+}
+
+.quick-fact-label {
+    display: block;
+    color: #516273;
+    line-height: 1.45;
+}
+
+.project {
+    padding: 12px 0;
+}
+
+.project-text {
+    gap: 10px;
+}
+
+.project-text p {
+    line-height: 1.6;
+    color: #2a3540;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.project-meta span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #e7edf3;
+    color: #314253;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.project-links {
+    margin-top: 12px;
+}
+
+.project-links a {
+    font-weight: 700;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-copy {
+        max-width: none;
+    }
+
+    .quick-facts {
+        grid-template-columns: 1fr;
+    }
 }
